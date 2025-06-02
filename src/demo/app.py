@@ -1,3 +1,4 @@
+import numpy as np
 import streamlit as st
 import joblib
 import pandas as pd
@@ -51,6 +52,12 @@ def classify_pm25_who(pm25_value):
 # ==================== Dự đoán ====================
 if submitted:
     df = pd.DataFrame([values], columns=features)
+    # Áp dụng log-transform cho đúng cột (giống khi train)
+    log_cols = ['TSP', 'O3', 'CO', 'NO2', 'SO2']
+    for col in log_cols:
+        if col in df.columns:
+            df[col] = np.log1p(df[col])  # log(1 + x), tránh log(0)
+
     scaled = scaler.transform(df)
     pca_data = pca.transform(scaled)
     pred = round(model.predict(pca_data)[0], 2)

@@ -11,8 +11,17 @@ h1, h6, label, .stButton>button, .result-circle, .info-box, .stMetric {
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.9);
 }
 
-h1 { text-align: center; color: #0277bd; margin-bottom: 10px; }
-h6 { text-align: center; font-weight: normal; color: #555; }
+h1 {
+    text-align: center;
+    color: #0277bd;
+    margin-bottom: 10px;
+}
+
+h6 {
+    text-align: center;
+    font-weight: normal;
+    color: #555;
+}
 
 div[data-baseweb="input"] > div {
     border-radius: 12px;
@@ -31,6 +40,7 @@ div[data-baseweb="input"] > div {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: 0.2s ease-in-out;
 }
+
 .stButton>button:hover {
     background-color: #039be5;
     transform: translateY(-1px);
@@ -50,9 +60,6 @@ div[data-baseweb="input"] > div {
     color: white;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
 }
-.good { background-color: #00e676; }
-.moderate { background-color: #ffeb3b; color: #212121; }
-.bad { background-color: #ff1744; }
 
 .info-box {
     background-color: #ffffffcc;
@@ -62,44 +69,7 @@ div[data-baseweb="input"] > div {
     margin-top: 20px;
 }
 
-/* Mây bay */
-.cloud {
-    background: #ffffff;
-    border-radius: 100px;
-    position: absolute;
-    width: 200px;
-    height: 60px;
-    z-index: 0;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-.cloud::before, .cloud::after {
-    content: '';
-    position: absolute;
-    background: #ffffff;
-    border-radius: 50%;
-}
-.cloud::before {
-    width: 100px; height: 100px; top: -20px; left: 50px;
-}
-.cloud::after {
-    width: 80px; height: 80px; top: 10px; left: 120px;
-}
-.cloud1 { top: 50px; left: -300px; animation-name: cloudMoveRight; animation-duration: 200s; }
-.cloud2 { top: 150px; right: -400px; animation-name: cloudMoveLeft; animation-duration: 130s; }
-.cloud3 { top: 250px; left: -500px; animation-name: cloudMoveRight; animation-duration: 250s; }
-.cloud4 { top: 300px; right: -350px; animation-name: cloudMoveLeft; animation-duration: 400s; }
-.cloud5 { top: 500px; left: -600px; animation-name: cloudMoveRight; animation-duration: 100s; }
-
-@keyframes cloudMoveRight {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(200vw); }
-}
-@keyframes cloudMoveLeft {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-200vw); }
-}
+/* Hiển thị kết quả màu theo mức độ PM2.5 */
 .pm25-good {
     background-color: #00e676;
     color: white;
@@ -125,8 +95,51 @@ div[data-baseweb="input"] > div {
     color: white;
 }
 
+/* Mây bay trang trí */
+.cloud {
+    background: #ffffff;
+    border-radius: 100px;
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    z-index: 0;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.cloud::before, .cloud::after {
+    content: '';
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 100px; height: 100px; top: -20px; left: 50px;
+}
+
+.cloud::after {
+    width: 80px; height: 80px; top: 10px; left: 120px;
+}
+
+.cloud1 { top: 50px; left: -300px; animation-name: cloudMoveRight; animation-duration: 200s; }
+.cloud2 { top: 150px; right: -400px; animation-name: cloudMoveLeft; animation-duration: 130s; }
+.cloud3 { top: 250px; left: -500px; animation-name: cloudMoveRight; animation-duration: 250s; }
+.cloud4 { top: 300px; right: -350px; animation-name: cloudMoveLeft; animation-duration: 400s; }
+.cloud5 { top: 500px; left: -600px; animation-name: cloudMoveRight; animation-duration: 100s; }
+
+@keyframes cloudMoveRight {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(200vw); }
+}
+@keyframes cloudMoveLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-200vw); }
+}
 </style>
 
+<!-- Mây -->
 <div class="cloud cloud1"></div>
 <div class="cloud cloud2"></div>
 <div class="cloud cloud3"></div>

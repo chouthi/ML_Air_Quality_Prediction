@@ -2,22 +2,18 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Đọc dữ liệu
-df = pd.read_csv('data/Air Quality Ho Chi Minh City.csv') 
 
+df = pd.read_csv('data/outlier_remove.csv') 
 
-# === BƯỚC 1: chọn 1 cột cần xử lý ===
-target_col = 'Humidity'  # 👉 bạn thay bằng tên cột muốn xử lý
+target_col = 'TSP'
 
-# === BƯỚC 2: Thống kê & kiểm tra ===
-print(f"\n🧪 Kiểm tra cột: {target_col}")
+print(f"Kiểm tra cột: {target_col}")
 print(f"Số giá trị thiếu: {df[target_col].isnull().sum()}")
-print(f"Skewness (độ lệch): {df[target_col].skew():.2f}")
-print(f"Giá trị trung bình: {df[target_col].mean():.2f}")
-print(f"Trung vị (median): {df[target_col].median():.2f}")
+print(f"Skewness: {df[target_col].skew():.2f}")
+print(f"Mean: {df[target_col].mean():.2f}")
+print(f"MMedian: {df[target_col].median():.2f}")
 print(f"Min: {df[target_col].min():.2f}, Max: {df[target_col].max():.2f}")
 
-# === BƯỚC 3: Vẽ biểu đồ ===
 plt.figure(figsize=(12, 4))
 
 # Histogram
@@ -33,21 +29,18 @@ plt.title(f"Boxplot - {target_col}")
 plt.tight_layout()
 plt.show()
 
-# === BƯỚC 4: Gợi ý xử lý ===
 skew = abs(df[target_col].skew())
 if skew < 0.5:
-    print("✅ Gợi ý: Dữ liệu gần chuẩn → dùng MEAN để điền.")
+    print("Dữ liệu gần chuẩn")
 elif skew < 1.0:
-    print("⚠️ Dữ liệu hơi lệch → cân nhắc dùng MEDIAN.")
+    print("Dữ liệu hơi lệch.")
 else:
-    print("🚨 Dữ liệu lệch mạnh hoặc có outlier → nên dùng MEDIAN.")
+    print("Dữ liệu lệch mạnh hoặc có outlier")
 
-# === BƯỚC 5: Điền missing (bạn chọn 1 cách xử lý) ===
 
 # df[target_col].fillna(df[target_col].mean(), inplace=True)      # dùng trung bình
 # df[target_col].fillna(df[target_col].median(), inplace=True)    # dùng trung vị
 # df[target_col].fillna(method='ffill', inplace=True)             # forward fill
 # df.dropna(subset=[target_col], inplace=True)                    # xóa dòng thiếu
 
-# === BƯỚC 6: Kiểm tra lại ===
-print(f"Sau xử lý: {df[target_col].isnull().sum()} giá trị thiếu còn lại.")
+
