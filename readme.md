@@ -4,17 +4,11 @@
 
 ## HOW TO RUN
 ### Step 1:
-- Create virtual env for python version 3.11:
-For **window**: ```& "C:\Program Files\Python311\python.exe" -m venv .venv ```
-For **macOS**: ```python3.11 -m venv .venv```
-### Step 2:
-- Active python version in venv(virtual environment):
-If you are using **window** before continue run this command: ```Set-ExecutionPolicy -Scope Process -
-ExecutionPolicy Bypass```
-For **window**: ```.venv\Scripts\activate```
-For **macOS**: ```source .venv/bin/activate```
-## Step 3:
 - Install the requirements:
-```pip install -r requirements.txt``` or ```pip3 install -r requirements.txt```
-## Step 4:
-- run: ```python .\src\preprocess.py```
+```pip install -r requirements.txt```
+### Step 2:
+- Cd to demo
+  ```cd .\src\demo\```
+### Step 3:
+-Run App
+ ```python -m streamlit run app.py```
