@@ -10,6 +10,8 @@ This application predicts **PM2.5 concentration** in **Ho Chi Minh City** based 
 - Temperature
 - Humidity
 
+***This is our slide:*** https://www.canva.com/design/DAGpGCT_pSU/KvfyTeB1FEnpelIZXO5dMg/edit?utm_content=DAGpGCT_pSU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 ---
 
 ## 🚀 HOW TO RUN
