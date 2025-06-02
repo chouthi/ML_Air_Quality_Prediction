@@ -42,7 +42,7 @@ Below is the original dataset:
 
 ---
 
-#### 🧪 Example: 3 Valid Sample Rows for Testing
+#### Example: 3 Valid Sample Rows for Testing
 
 | TSP     | O3       | CO       | NO2      | SO2     | Temperature | Humidity |
 |---------|----------|----------|----------|---------|-------------|----------|
@@ -58,6 +58,6 @@ Below is the original dataset:
 This application includes 2 machine learning models for comparison purposes. Among them:
 
 - ✅ **Random Forest (RF)** is our primary and most reliable model. It delivers stable and accurate PM2.5 predictions.
-- ⚠️ **K-Nearest Neighbors (KNN)** is included for educational comparison only. Its predictions may be **less accurate** due to its simpler nature and sensitivity to noisy data.
+- ⚠️ **K-Nearest Neighbors (KNN)** is included for educational ***comparison only***. Its predictions may be **less accurate** due to its simpler nature and sensitivity to noisy data.
 
 > 👉 For best results, we recommend using the **Random Forest** model when testing the prediction functionality.
