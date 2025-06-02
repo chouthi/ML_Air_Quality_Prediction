@@ -34,9 +34,9 @@ This application predicts **PM2.5 concentration** in **Ho Chi Minh City** based 
 
 #### Sample Dataset Preview
 
-Below is the original dataset used to train the prediction model:
+Below is the original dataset:
 
-![Sample Dataset](data/Air Quality Ho Chi Minh City.csv)
+ [`data/Air Quality Ho Chi Minh City.csv`](data/Air%20Quality%20Ho%20Chi%20Minh%20City.csv)
 
 > You can copy values from this table (excluding PM2.5) and input them into the app to test the model’s prediction.
 
